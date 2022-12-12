@@ -218,7 +218,7 @@ void MakAlc_Alarma::Define(unsigned long tiempo, void (*funcion)(), int repetici
 //    Por defecto 1. Cero o -1 indica que siempre está activa.
 // intervalo -> Unidad de medida del parámetro tiempo (opcional)
 //    Se pueden utilizar segundos, milisegundos (por defecto) o microsegundos.
-void MakAlc_Alarma::Define(unsigned long tiempo, void (*funcion)(), int repeticiones = 1, resolucion intervalo = MILISEGUNDOS)
+void MakAlc_Alarma::Define(unsigned long tiempo, void (*funcion)(), int repeticiones, resolucion intervalo)
 {
 	_estado = estado::Preparado;
 	_tiempo = tiempo;
@@ -255,7 +255,27 @@ void MakAlc_Alarma::Start()
 }
 
 // Inicia la "Alarma" y lanza el primer evento.
-void MakAlc_Alarma::Start(unsigned long tiempo, int repeticiones = 1, resolucion intervalo = MILISEGUNDOS)
+void MakAlc_Alarma::Start(unsigned long tiempo)
+{
+	_tiempo = tiempo;
+	_llamarFuncion = false;
+	_estado = estado::Iniciado;
+	actualizaEstado();
+}
+
+// Inicia la "Alarma" y lanza el primer evento.
+void MakAlc_Alarma::Start(unsigned long tiempo, int repeticiones)
+{
+	_tiempo = tiempo;
+	_repeticiones = repeticiones;
+	_cuentaRepeticiones = repeticiones;
+	_llamarFuncion = false;
+	_estado = estado::Iniciado;
+	actualizaEstado();
+}
+
+// Inicia la "Alarma" y lanza el primer evento.
+void MakAlc_Alarma::Start(unsigned long tiempo, int repeticiones, resolucion intervalo)
 {
 	_tiempo = tiempo;
 	_repeticiones = repeticiones;
@@ -267,7 +287,33 @@ void MakAlc_Alarma::Start(unsigned long tiempo, int repeticiones = 1, resolucion
 }
 
 // Inicia la "Alarma" y lanza el primer evento.
-void MakAlc_Alarma::Start(unsigned long tiempo, void (*funcion)(), int repeticiones = 1, resolucion intervalo = MILISEGUNDOS)
+void MakAlc_Alarma::Start(unsigned long tiempo, void (*funcion)())
+{
+	_tiempo = tiempo;
+	_funcion = funcion;
+	_llamarFuncion = true;
+	_estado = estado::Iniciado;
+	_funcion();
+	_inicio = _resolucion == MICROSEGUNDOS ? micros() : millis();
+	actualizaEstado();
+}
+
+// Inicia la "Alarma" y lanza el primer evento.
+void MakAlc_Alarma::Start(unsigned long tiempo, void (*funcion)(), int repeticiones)
+{
+	_tiempo = tiempo;
+	_repeticiones = repeticiones;
+	_cuentaRepeticiones = repeticiones;
+	_funcion = funcion;
+	_llamarFuncion = true;
+	_estado = estado::Iniciado;
+	_funcion();
+	_inicio = _resolucion == MICROSEGUNDOS ? micros() : millis();
+	actualizaEstado();
+}
+
+// Inicia la "Alarma" y lanza el primer evento.
+void MakAlc_Alarma::Start(unsigned long tiempo, void (*funcion)(), int repeticiones, resolucion intervalo)
 {
 	_tiempo = tiempo;
 	_repeticiones = repeticiones;
@@ -439,5 +485,4 @@ int MakAlc_Alarma::QuedanRepeticiones()
 
 MakAlc_Alarma::~MakAlc_Alarma()
 {
-	
 }
