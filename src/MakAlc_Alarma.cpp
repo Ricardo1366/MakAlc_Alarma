@@ -260,6 +260,7 @@ void MakAlc_Alarma::Start(unsigned long tiempo)
 	_tiempo = tiempo;
 	_llamarFuncion = false;
 	_estado = estado::Iniciado;
+	_inicio = _resolucion == MICROSEGUNDOS ? micros() : millis();
 	actualizaEstado();
 }
 
@@ -271,6 +272,7 @@ void MakAlc_Alarma::Start(unsigned long tiempo, int repeticiones)
 	_cuentaRepeticiones = repeticiones;
 	_llamarFuncion = false;
 	_estado = estado::Iniciado;
+	_inicio = _resolucion == MICROSEGUNDOS ? micros() : millis();
 	actualizaEstado();
 }
 
@@ -283,6 +285,7 @@ void MakAlc_Alarma::Start(unsigned long tiempo, int repeticiones, resolucion int
 	_resolucion = intervalo;
 	_llamarFuncion = false;
 	_estado = estado::Iniciado;
+	_inicio = _resolucion == MICROSEGUNDOS ? micros() : millis();
 	actualizaEstado();
 }
 
