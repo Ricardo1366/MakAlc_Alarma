@@ -18,6 +18,6 @@ MakAlc_alarma implementa la clase "MakAlc_Alarma" cuya funcionalidad principal e
 
 La declaración es la siguiente:
 
-`Marklc_Alarma Alarma;`
+`Marklc_Alarma *Nombre_Variable*;`
 
 *(En construcción)*
