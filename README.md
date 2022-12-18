@@ -22,13 +22,12 @@ La declaración es la siguiente:
 
 Los parámetros que admite son los siguientes:
 
-**tiempo** (unsigned long): Tiempo a cronometrar. El parámetro "resolución" indica si se ,mide en microsegundos, milisegundos (por defecto) o en segundos.
+__tiempo__ (unsigned long): Tiempo a cronometrar. El parámetro "resolución" indica si se ,mide en microsegundos, milisegundos (por defecto) o en segundos.
 
-**repeticiones** (int): Indica cuantas veces se debe repetir el proceso. Si se indica un número inferior a 1 se repite de forma indefinida.
+__repeticiones__ (int): Indica cuantas veces se debe repetir el proceso. Si se indica un número inferior a 1 se repite de forma indefinida.
 
-**fucion**: Nombre de la función a ejecutar cuando se cumpla el tiempo establecido. Es un parámetro opcional, no es necesario informarlo.
+__fucion__: Nombre de la función a ejecutar cuando se cumpla el tiempo establecido. Es un parámetro opcional, no es necesario informarlo.
 
-**resolución**: Unidad en la que se mide el primer parámetro (tiempo). Admite tres posibles valores, MICROSEGUNDOS, MILISEGUNDOS y SEGUNDOS.
-
+__resolución__: Unidad en la que se mide el primer parámetro (tiempo). Admite tres posibles valores, MICROSEGUNDOS, MILISEGUNDOS y SEGUNDOS.
 
 *(En construcción)*
