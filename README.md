@@ -7,7 +7,7 @@ Para instalar esta librería en Arduino solo hay que descargar el fichero "ZIP" 
 
 PlaformIO
 ---------
-Para trabajar con esta ibreria en PlatormIO solo tienes que incluir en el fichero platformio.ini el siguiente teto:
+Para trabajar con esta ibreria en PlatormIO solo tienes que incluir en el fichero platformio.ini el siguiente texto:
 ```text
 lib_deps =
            https://github.com/AsociacionMakerAlicante/MakAlc_Alarma
@@ -17,9 +17,9 @@ Documentación
 MakAlc_alarma implementa la clase "MakAlc_Alarma" cuya funcionalidad principal es controlar si ha pasado el tiempo indicado. Devuelve "True" cuando se ha llegado o superado el tiempo indicado y puede opcionalmente llamar a la función que le hayamos indicado en su inicialización.
 
 La declaración es la siguiente:
-
-`Marklc_Alarma Nombre_Variable;`
-
+```cpp
+Marklc_Alarma Nombre_Variable;
+```
 Los parámetros que admite son los siguientes:
 
 ___tiempo___ (unsigned long): Tiempo a cronometrar. El parámetro "resolución" indica si se ,mide en microsegundos, milisegundos (por defecto) o en segundos.
