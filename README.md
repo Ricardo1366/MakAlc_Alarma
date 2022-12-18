@@ -30,4 +30,18 @@ ___fucion___: Nombre de la función a ejecutar cuando se cumpla el tiempo establ
 
 ___resolucion___: Unidad en la que se mide el primer parámetro (tiempo). Admite tres posibles valores, MICROSEGUNDOS, MILISEGUNDOS y SEGUNDOS.
 
+FUNCIONES
+---------
+__define__: Informa los parámetros con los que se va a ejecutar. Si no se han informado parámetros al declarar la variable se informan con esta función.
+
+__Borra__: Elimina la definición de la alarma. Es necesario volver a definir los parámetros antes de volver a ponerla en marcha.
+
+__Comprueba__: Función encargada de comprobar si se ha cumplido el tiempo estipulado. Devuelve true cuando se ha alcanzado. Cuando alcanza el número de repeticiones informadas desactiva la alarma. Si se ha informado una función además de devolver true la ejecuta.
+
+__Finaliza__: Da por finalizada una alarma sin esperar a que se cumpla el tiempo ni las repeticiones.
+
+__Pausa__: Pone la alarma en modo "espera". Para volver a iniciarla hay que utilizar `Start()` sin parámetros. Si la alarma tiene informadas repeticiones empieza a contar desde la repetición en la que se indicó `Pausa()`
+
+__Start__: Pone es marcha la cuenta atrás. Si se le pasa algún parámetro sobreescribe el valor informado con "define".
+
 *(En construcción)*
