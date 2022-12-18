@@ -24,10 +24,10 @@ Los parámetros que admite son los siguientes:
 
 ___tiempo___ (unsigned long): Tiempo a cronometrar. El parámetro "resolución" indica si se ,mide en microsegundos, milisegundos (por defecto) o en segundos.
 
-__repeticiones__ (int): Indica cuantas veces se debe repetir el proceso. Si se indica un número inferior a 1 se repite de forma indefinida.
+___repeticiones___ (int): Indica cuantas veces se debe repetir el proceso. Si se indica un número inferior a 1 se repite de forma indefinida.
 
-__fucion__: Nombre de la función a ejecutar cuando se cumpla el tiempo establecido. Es un parámetro opcional, no es necesario informarlo.
+___fucion___: Nombre de la función a ejecutar cuando se cumpla el tiempo establecido. Es un parámetro opcional, no es necesario informarlo.
 
-__resolución__: Unidad en la que se mide el primer parámetro (tiempo). Admite tres posibles valores, MICROSEGUNDOS, MILISEGUNDOS y SEGUNDOS.
+___resolución___: Unidad en la que se mide el primer parámetro (tiempo). Admite tres posibles valores, MICROSEGUNDOS, MILISEGUNDOS y SEGUNDOS.
 
 *(En construcción)*
