@@ -47,3 +47,5 @@ __ProximoEvento__: Devuelve el tiempo que falta para que la alarma se active. El
 __QuedanRepeticiones__: Devuelve el número de veces que se ejecutará la alarma antes de darse por finalizada.
 
 __Start__: Pone es marcha la cuenta atrás. Si se le pasa algún parámetro sobrescribe el valor informado con `define()`.
+
+Si encuntras algún fallo en la ejecución de la libreria, por favor informa [AQUÍ](mailto:ricardomakeralicante@gmail.com?subjet:Incidencia en libreria Maker_Alc)
