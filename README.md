@@ -42,6 +42,8 @@ __Finaliza__: Da por finalizada una alarma sin esperar a que se cumpla el tiempo
 
 __Pausa__: Pone la alarma en modo "espera". Para volver a iniciarla hay que utilizar `Start()` sin parámetros. Si la alarma tiene informadas repeticiones empieza a contar desde la repetición en la que se indicó `Pausa()`
 
-__Start__: Pone es marcha la cuenta atrás. Si se le pasa algún parámetro sobreescribe el valor informado con "define".
+__ProximoEvento__: Devuelve el tiempo que falta para que la alarma se active. El valor devuelto está en la misma unidad que el parámetro "resolución" (MICROSEGUNDOS, MILISEGUNDOS, SEGUNDOS)
 
-*(En construcción)*
+__QuedanRepeticiones__: Devuelve el número de veces que se ejecutará la alarma antes de darse por finalizada.
+
+__Start__: Pone es marcha la cuenta atrás. Si se le pasa algún parámetro sobrescribe el valor informado con `define()`.
