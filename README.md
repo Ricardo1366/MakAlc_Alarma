@@ -28,6 +28,6 @@ ___repeticiones___ (int): Indica cuantas veces se debe repetir el proceso. Si se
 
 ___fucion___: Nombre de la función a ejecutar cuando se cumpla el tiempo establecido. Es un parámetro opcional, no es necesario informarlo.
 
-___resolución___: Unidad en la que se mide el primer parámetro (tiempo). Admite tres posibles valores, MICROSEGUNDOS, MILISEGUNDOS y SEGUNDOS.
+___resolucion___: Unidad en la que se mide el primer parámetro (tiempo). Admite tres posibles valores, MICROSEGUNDOS, MILISEGUNDOS y SEGUNDOS.
 
 *(En construcción)*
