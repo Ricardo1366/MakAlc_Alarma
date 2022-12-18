@@ -20,4 +20,10 @@ La declaración es la siguiente:
 
 `Marklc_Alarma Nombre_Variable;`
 
+Los parámetros que admite son los siguientes:
+**tiempo** (unsigned long): Tiempo a cronometrar. El parámetro "resolución" indica si se ,mide en microsegundos, milisegundos (por defecto) o en segundos.
+**repeticiones** (int): Indica cuantas veces se debe repetir el proceso. Si se indica un número inferior a 1 se repite de forma indefinida.
+**fucion**: Nombre de la función a ejecutar cuando se cumpla el tiempo establecido. Es un parámetro opcional, no es necesario informarlo.
+**resolución**: Unidad en la que se mide el primer parámetro (tiempo). Admite tres posibles valores, MICROSEGUNDOS, MILISEGUNDOS y SEGUNDOS.
+
 *(En construcción)*
