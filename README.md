@@ -10,7 +10,7 @@ PlaformIO
 Para trabajar con esta ibreria en PlatormIO solo tienes que incluir en el fichero platformio.ini el siguiente texto:
 ```text
 lib_deps =
-           https://github.com/AsociacionMakerAlicante/MakAlc_Alarma
+           https://github.com/AsociacionMakerAlicante/MakAlc_Alarma@^1.0.0
 ```
 Documentación
 =============
