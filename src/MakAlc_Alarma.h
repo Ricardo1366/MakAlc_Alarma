@@ -56,7 +56,7 @@ public:
 	void Define(unsigned long tiempo, void (*funcion)(), int repeticiones);
 	void Define(unsigned long tiempo, void (*funcion)(), int repeticiones, resolucion intervalo);
 
-	void ProximoEvento();	// Pendiente definir.
+	unsigned long ProximoEvento();	// Pendiente definir.
 	void Finaliza();
 	void Borra();
 	void Pausa();

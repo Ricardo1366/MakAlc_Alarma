@@ -479,11 +479,47 @@ void MakAlc_Alarma::asignaInicio()
 // Devuelve el número de repeticiones pendientes de ejecutar;
 int MakAlc_Alarma::QuedanRepeticiones()
 {
-	if (_estado != 2)
+	if (_estado != estado::Iniciado)
 	{
 		return 0;
 	}
 	return _cuentaRepeticiones;
+}
+
+// Devuelve cuanto tiempo queda para ejecutar el próximo evento.
+unsigned long MakAlc_Alarma::ProximoEvento()
+{
+	if (_estado != estado::Iniciado)
+	{
+		return 0;
+	}
+
+	// En función de la resolución hacemos unas comprobaciones u otras.
+	switch (_resolucion)
+	{
+	case MILISEGUNDOS:
+
+		// Devolvemos el tiempo que queda en milisegundos.
+		return _tiempo - (millis() - _inicio);
+		break;
+
+	case MICROSEGUNDOS:
+		// Devolvemos el tiempo que queda en microsegundos.
+		return _tiempo - (micros() - _inicio);
+		break;
+
+	case SEGUNDOS:
+		// Devolvemos el tiempo que queda en segundos.
+		return (_tiempo - (millis() - _inicio)) / 1000;
+		break;
+
+		break;
+
+	default:
+		return 0;
+		break;
+	}
+
 }
 
 MakAlc_Alarma::~MakAlc_Alarma()
