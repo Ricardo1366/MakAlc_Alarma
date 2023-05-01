@@ -34,27 +34,15 @@ public:
 	~MakAlc_Alarma();
 	
 	MakAlc_Alarma();
-	MakAlc_Alarma(unsigned long tiempo);
-	MakAlc_Alarma(unsigned long tiempo, int repeticiones);
-	MakAlc_Alarma(unsigned long tiempo, int repeticiones, resolucion intervalo);
-	MakAlc_Alarma(unsigned long tiempo, void (*funcion)());
-	MakAlc_Alarma(unsigned long tiempo, void (*funcion)(), int repeticiones);
-	MakAlc_Alarma(unsigned long tiempo, void (*funcion)(), int repeticiones, resolucion intervalo);
+	MakAlc_Alarma(unsigned long tiempo, int repeticiones = 1, resolucion intervalo = MILISEGUNDOS);
+	MakAlc_Alarma(unsigned long tiempo, void (*funcion)(), int repeticiones = 1, resolucion intervalo = MILISEGUNDOS);
 
 	void Start();
-	void Start(unsigned long tiempo);
-	void Start(unsigned long tiempo, int repeticiones);
-	void Start(unsigned long tiempo, int repeticiones, resolucion intervalo);
-	void Start(unsigned long tiempo, void (*funcion)());
-	void Start(unsigned long tiempo, void (*funcion)(), int repeticiones);
-	void Start(unsigned long tiempo, void (*funcion)(), int repeticiones, resolucion intervalo);
+	void Start(unsigned long tiempo, int repeticiones = 1, resolucion intervalo = MILISEGUNDOS);
+	void Start(unsigned long tiempo, void (*funcion)(), int repeticiones = 1, resolucion intervalo = MILISEGUNDOS);
 
-	void Define(unsigned long tiempo);
-	void Define(unsigned long tiempo, int repeticiones);
-	void Define(unsigned long tiempo, int repeticiones, resolucion intervalo);
-	void Define(unsigned long tiempo, void (*funcion)());
-	void Define(unsigned long tiempo, void (*funcion)(), int repeticiones);
-	void Define(unsigned long tiempo, void (*funcion)(), int repeticiones, resolucion intervalo);
+	void Define(unsigned long tiempo, int repeticiones = 1, resolucion intervalo = MILISEGUNDOS);
+	void Define(unsigned long tiempo, void (*funcion)(), int repeticiones = 1, resolucion intervalo = MILISEGUNDOS);
 
 	unsigned long ProximoEvento();	// Pendiente definir.
 	void Finaliza();

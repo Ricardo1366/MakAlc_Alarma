@@ -14,40 +14,6 @@ MakAlc_Alarma::MakAlc_Alarma()
 //    Por defecto 1. Cero o -1 indica que siempre está activa.
 // intervalo -> Unidad de medida del parámetro tiempo (opcional)
 //    Se pueden utilizar segundos, milisegundos (por defecto) o microsegundos.
-MakAlc_Alarma::MakAlc_Alarma(unsigned long tiempo)
-{
-	_estado = estado::Preparado;
-	_tiempo = tiempo;
-	_repeticiones = 1;
-	_cuentaRepeticiones = 1;
-	_resolucion = MILISEGUNDOS;
-	_llamarFuncion = false;
-}
-
-// Inicializa la alarma para que devuelva 'True' una vez que pase el plazo establecido.
-// Parámetros:
-// tiempo -> Tiempo asignado a la alarma (obligatorio)
-// repeticiones -> Número de veces que se ejecuta antes de desactivarse (opcional)
-//    Por defecto 1. Cero o -1 indica que siempre está activa.
-// intervalo -> Unidad de medida del parámetro tiempo (opcional)
-//    Se pueden utilizar segundos, milisegundos (por defecto) o microsegundos.
-MakAlc_Alarma::MakAlc_Alarma(unsigned long tiempo, int repeticiones)
-{
-	_estado = estado::Preparado;
-	_tiempo = tiempo;
-	_repeticiones = repeticiones;
-	_cuentaRepeticiones = repeticiones;
-	_resolucion = MILISEGUNDOS;
-	_llamarFuncion = false;
-}
-
-// Inicializa la alarma para que devuelva 'True' una vez que pase el plazo establecido.
-// Parámetros:
-// tiempo -> Tiempo asignado a la alarma (obligatorio)
-// repeticiones -> Número de veces que se ejecuta antes de desactivarse (opcional)
-//    Por defecto 1. Cero o -1 indica que siempre está activa.
-// intervalo -> Unidad de medida del parámetro tiempo (opcional)
-//    Se pueden utilizar segundos, milisegundos (por defecto) o microsegundos.
 MakAlc_Alarma::MakAlc_Alarma(unsigned long tiempo, int repeticiones, resolucion intervalo)
 {
 	_estado = estado::Preparado;
@@ -56,46 +22,6 @@ MakAlc_Alarma::MakAlc_Alarma(unsigned long tiempo, int repeticiones, resolucion 
 	_cuentaRepeticiones = repeticiones;
 	_resolucion = intervalo;
 	_llamarFuncion = false;
-}
-
-// Inicializa la alarma para que ejecute una función una vez que pase el plazo establecido.
-// Parámetros:
-// tiempo -> Tiempo asignado a la alarma (obligatorio)
-// funcion -> Función a jecutar (obligatorio)
-//    La función tiene que ser de tipo "void" sin parámetros.
-// repeticiones -> Número de veces que se ejecuta antes de desactivarse (opcional)
-//    Por defecto 1. Cero o -1 indica que siempre está activa.
-// intervalo -> Unidad de medida del parámetro tiempo (opcional)
-//    Se pueden utilizar segundos, milisegundos (por defecto) o microsegundos.
-MakAlc_Alarma::MakAlc_Alarma(unsigned long tiempo, void (*funcion)())
-{
-	_estado = estado::Preparado;
-	_tiempo = tiempo;
-	_repeticiones = 1;
-	_cuentaRepeticiones = 1;
-	_resolucion = MILISEGUNDOS;
-	_funcion = funcion;
-	_llamarFuncion = true;
-}
-
-// Inicializa la alarma para que ejecute una función una vez que pase el plazo establecido.
-// Parámetros:
-// tiempo -> Tiempo asignado a la alarma (obligatorio)
-// funcion -> Función a jecutar (obligatorio)
-//    La función tiene que ser de tipo "void" sin parámetros.
-// repeticiones -> Número de veces que se ejecuta antes de desactivarse (opcional)
-//    Por defecto 1. Cero o -1 indica que siempre está activa.
-// intervalo -> Unidad de medida del parámetro tiempo (opcional)
-//    Se pueden utilizar segundos, milisegundos (por defecto) o microsegundos.
-MakAlc_Alarma::MakAlc_Alarma(unsigned long tiempo, void (*funcion)(), int repeticiones)
-{
-	_estado = estado::Preparado;
-	_tiempo = tiempo;
-	_repeticiones = repeticiones;
-	_cuentaRepeticiones = repeticiones;
-	_resolucion = MILISEGUNDOS;
-	_funcion = funcion;
-	_llamarFuncion = true;
 }
 
 // Inicializa la alarma para que ejecute una función una vez que pase el plazo establecido.
@@ -125,40 +51,6 @@ MakAlc_Alarma::MakAlc_Alarma(unsigned long tiempo, void (*funcion)(), int repeti
 //    Por defecto 1. Cero o -1 indica que siempre está activa.
 // intervalo -> Unidad de medida del parámetro tiempo (opcional)
 //    Se pueden utilizar segundos, milisegundos (por defecto) o microsegundos.
-void MakAlc_Alarma::Define(unsigned long tiempo)
-{
-	_estado = estado::Preparado;
-	_tiempo = tiempo;
-	_repeticiones = 1;
-	_cuentaRepeticiones = 1;
-	_resolucion = MILISEGUNDOS;
-	_llamarFuncion = false;
-}
-
-// Configura la alarma para que devuelva 'True' una vez que pase el plazo establecido.
-// Parámetros:
-// tiempo -> Tiempo asignado a la alarma (obligatorio)
-// repeticiones -> Número de veces que se ejecuta antes de desactivarse (opcional)
-//    Por defecto 1. Cero o -1 indica que siempre está activa.
-// intervalo -> Unidad de medida del parámetro tiempo (opcional)
-//    Se pueden utilizar segundos, milisegundos (por defecto) o microsegundos.
-void MakAlc_Alarma::Define(unsigned long tiempo, int repeticiones)
-{
-	_estado = estado::Preparado;
-	_tiempo = tiempo;
-	_repeticiones = repeticiones;
-	_cuentaRepeticiones = repeticiones;
-	_resolucion = MILISEGUNDOS;
-	_llamarFuncion = false;
-}
-
-// Configura la alarma para que devuelva 'True' una vez que pase el plazo establecido.
-// Parámetros:
-// tiempo -> Tiempo asignado a la alarma (obligatorio)
-// repeticiones -> Número de veces que se ejecuta antes de desactivarse (opcional)
-//    Por defecto 1. Cero o -1 indica que siempre está activa.
-// intervalo -> Unidad de medida del parámetro tiempo (opcional)
-//    Se pueden utilizar segundos, milisegundos (por defecto) o microsegundos.
 void MakAlc_Alarma::Define(unsigned long tiempo, int repeticiones, resolucion intervalo)
 {
 	_estado = estado::Preparado;
@@ -167,46 +59,6 @@ void MakAlc_Alarma::Define(unsigned long tiempo, int repeticiones, resolucion in
 	_cuentaRepeticiones = repeticiones;
 	_resolucion = intervalo;
 	_llamarFuncion = false;
-}
-
-// Configura la alarma para que ejecute una función una vez que pase el plazo establecido.
-// Parámetros:
-// tiempo -> Tiempo asignado a la alarma (obligatorio)
-// funcion -> Función a jecutar (obligatorio)
-//    La función tiene que ser de tipo "void" sin parámetros.
-// repeticiones -> Número de veces que se ejecuta antes de desactivarse (opcional)
-//    Por defecto 1. Cero o -1 indica que siempre está activa.
-// intervalo -> Unidad de medida del parámetro tiempo (opcional)
-//    Se pueden utilizar segundos, milisegundos (por defecto) o microsegundos.
-void MakAlc_Alarma::Define(unsigned long tiempo, void (*funcion)())
-{
-	_estado = estado::Preparado;
-	_tiempo = tiempo;
-	_repeticiones = 1;
-	_cuentaRepeticiones = 1;
-	_resolucion = MILISEGUNDOS;
-	_llamarFuncion = true;
-	_funcion = funcion;
-}
-
-// Configura la alarma para que ejecute una función una vez que pase el plazo establecido.
-// Parámetros:
-// tiempo -> Tiempo asignado a la alarma (obligatorio)
-// funcion -> Función a jecutar (obligatorio)
-//    La función tiene que ser de tipo "void" sin parámetros.
-// repeticiones -> Número de veces que se ejecuta antes de desactivarse (opcional)
-//    Por defecto 1. Cero o -1 indica que siempre está activa.
-// intervalo -> Unidad de medida del parámetro tiempo (opcional)
-//    Se pueden utilizar segundos, milisegundos (por defecto) o microsegundos.
-void MakAlc_Alarma::Define(unsigned long tiempo, void (*funcion)(), int repeticiones)
-{
-	_estado = estado::Preparado;
-	_tiempo = tiempo;
-	_repeticiones = repeticiones;
-	_cuentaRepeticiones = repeticiones;
-	_resolucion = MILISEGUNDOS;
-	_llamarFuncion = true;
-	_funcion = funcion;
 }
 
 // Configura la alarma para que ejecute una función una vez que pase el plazo establecido.
@@ -255,28 +107,6 @@ void MakAlc_Alarma::Start()
 }
 
 // Inicia la "Alarma" y lanza el primer evento.
-void MakAlc_Alarma::Start(unsigned long tiempo)
-{
-	_tiempo = tiempo;
-	_llamarFuncion = false;
-	_estado = estado::Iniciado;
-	_inicio = _resolucion == MICROSEGUNDOS ? micros() : millis();
-	actualizaEstado();
-}
-
-// Inicia la "Alarma" y lanza el primer evento.
-void MakAlc_Alarma::Start(unsigned long tiempo, int repeticiones)
-{
-	_tiempo = tiempo;
-	_repeticiones = repeticiones;
-	_cuentaRepeticiones = repeticiones;
-	_llamarFuncion = false;
-	_estado = estado::Iniciado;
-	_inicio = _resolucion == MICROSEGUNDOS ? micros() : millis();
-	actualizaEstado();
-}
-
-// Inicia la "Alarma" y lanza el primer evento.
 void MakAlc_Alarma::Start(unsigned long tiempo, int repeticiones, resolucion intervalo)
 {
 	_tiempo = tiempo;
@@ -285,32 +115,6 @@ void MakAlc_Alarma::Start(unsigned long tiempo, int repeticiones, resolucion int
 	_resolucion = intervalo;
 	_llamarFuncion = false;
 	_estado = estado::Iniciado;
-	_inicio = _resolucion == MICROSEGUNDOS ? micros() : millis();
-	actualizaEstado();
-}
-
-// Inicia la "Alarma" y lanza el primer evento.
-void MakAlc_Alarma::Start(unsigned long tiempo, void (*funcion)())
-{
-	_tiempo = tiempo;
-	_funcion = funcion;
-	_llamarFuncion = true;
-	_estado = estado::Iniciado;
-	_funcion();
-	_inicio = _resolucion == MICROSEGUNDOS ? micros() : millis();
-	actualizaEstado();
-}
-
-// Inicia la "Alarma" y lanza el primer evento.
-void MakAlc_Alarma::Start(unsigned long tiempo, void (*funcion)(), int repeticiones)
-{
-	_tiempo = tiempo;
-	_repeticiones = repeticiones;
-	_cuentaRepeticiones = repeticiones;
-	_funcion = funcion;
-	_llamarFuncion = true;
-	_estado = estado::Iniciado;
-	_funcion();
 	_inicio = _resolucion == MICROSEGUNDOS ? micros() : millis();
 	actualizaEstado();
 }

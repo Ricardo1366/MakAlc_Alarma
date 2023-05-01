@@ -7,10 +7,10 @@ Para instalar esta librería en Arduino solo hay que descargar el fichero "ZIP" 
 
 PlaformIO
 ---------
-Para trabajar con esta ibreria en PlatormIO solo tienes que incluir en el fichero platformio.ini el siguiente texto:
+Para trabajar con esta libreria en PlatormIO solo tienes que incluir en el fichero platformio.ini el siguiente texto:
 ```text
 lib_deps =
-           https://github.com/AsociacionMakerAlicante/MakAlc_Alarma@^1.0.0
+           https://github.com/AsociacionMakerAlicante/MakAlc_Alarma@^1.0.1
 ```
 Documentación
 =============
