@@ -1,6 +1,6 @@
 #include <Arduino.h>
 #include <MakAlc_Alarma.h>
-
+// Asociación Maker Alicante
 void cambiaEstadoLed();
 
 MakAlc_Alarma Alarma1;
