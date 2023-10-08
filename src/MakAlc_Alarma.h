@@ -79,10 +79,10 @@ public:
 	void Start(unsigned long tiempo, int repeticiones);
 
 	// Inicia la "Alarma" y lanza el primer evento.
-	void Start(unsigned long tiempo, int repeticiones = 1, resolucion intervalo = MILISEGUNDOS);
+	void Start(unsigned long tiempo, int repeticiones, resolucion intervalo);
 
 	// Inicia la "Alarma" y lanza el primer evento.
-	void Start(unsigned long tiempo, void (*funcion)(), int repeticiones = 1, resolucion intervalo = MILISEGUNDOS);
+	void Start(unsigned long tiempo, void (*funcion)(), int repeticiones, resolucion intervalo);
 
 	// Configura la alarma para que devuelva 'True' una vez que pase el plazo establecido.
 	// Parámetros:

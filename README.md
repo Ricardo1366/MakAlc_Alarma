@@ -47,5 +47,6 @@ __ProximoEvento__: Devuelve el tiempo que falta para que la alarma se active. El
 __QuedanRepeticiones__: Devuelve el número de veces que se ejecutará la alarma antes de darse por finalizada.
 
 __Start__: Pone en marcha la cuenta atrás. Si se le pasa algún parámetro sobrescribe el valor informado con `define()`. Si no se indican parámetros la primera alarma se activará una vez transcurrido el tiempo indicado en el parámetro "tiempo". Si se indica algún parámetro se actualiza el parámetro indicado y se lanza la ejecución de la primera alarma.
+No tiene parámetros por defecto. Si se va a utilizar `Start()` se debe inicializar primero la alarma con `define()` o informar todos los parámetros.
 
 Si encuntras algún fallo en la ejecución de la libreria, por favor informa [AQUÍ](mailto:ricardomakeralicante@gmail.com)
