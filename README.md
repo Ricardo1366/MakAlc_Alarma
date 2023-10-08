@@ -10,7 +10,7 @@ PlaformIO
 Para trabajar con esta libreria en PlatormIO solo tienes que incluir en el fichero platformio.ini el siguiente texto:
 ```text
 lib_deps =
-           https://github.com/AsociacionMakerAlicante/MakAlc_Alarma@^1.0.1
+           https://github.com/AsociacionMakerAlicante/MakAlc_Alarma@^1.0.2
 ```
 Documentación
 =============
