@@ -111,6 +111,8 @@ void MakAlc_Alarma::Start(unsigned long tiempo){
 	_tiempo = tiempo;
 	_estado = estado::Iniciado;
 	_cuentaRepeticiones = _repeticiones;
+	asignaInicio();
+	if (_llamarFuncion){_funcion();}
 	actualizaEstado();
 }
 
@@ -119,6 +121,8 @@ void MakAlc_Alarma::Start(unsigned long tiempo, int repeticiones){
 	_tiempo = tiempo;
 	_estado = estado::Iniciado;
 	_cuentaRepeticiones = repeticiones;
+	asignaInicio();
+	if (_llamarFuncion){_funcion();}
 	actualizaEstado();
 }
 
@@ -133,6 +137,8 @@ void MakAlc_Alarma::Start(unsigned long tiempo, int repeticiones, resolucion int
 	_llamarFuncion = false;
 	_estado = estado::Iniciado;
 	_inicio = _resolucion == MICROSEGUNDOS ? micros() : millis();
+	asignaInicio();
+	if (_llamarFuncion){_funcion();}
 	actualizaEstado();
 }
 
@@ -147,7 +153,7 @@ void MakAlc_Alarma::Start(unsigned long tiempo, void (*funcion)(), int repeticio
 	_llamarFuncion = true;
 	_estado = estado::Iniciado;
 	_funcion();
-	_inicio = millis();
+	asignaInicio();
 	actualizaEstado();
 }
 
@@ -346,3 +352,4 @@ unsigned long MakAlc_Alarma::ProximoEvento()
 MakAlc_Alarma::~MakAlc_Alarma()
 {
 }
+
