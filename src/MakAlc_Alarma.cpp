@@ -106,6 +106,23 @@ void MakAlc_Alarma::Start()
 	}
 }
 
+// Vuelve a lanzar la alarma asignándole el nuevo tiempo.
+void MakAlc_Alarma::Start(unsigned long tiempo){
+	_tiempo = tiempo;
+	_estado = estado::Iniciado;
+	_cuentaRepeticiones = _repeticiones;
+	actualizaEstado();
+}
+
+// Vuelve a lanzar la alarma asignándole el nuevo tiempo y las repeticiones.
+void MakAlc_Alarma::Start(unsigned long tiempo, int repeticiones){
+	_tiempo = tiempo;
+	_estado = estado::Iniciado;
+	_cuentaRepeticiones = repeticiones;
+	actualizaEstado();
+}
+
+
 // Inicia la "Alarma" y lanza el primer evento.
 void MakAlc_Alarma::Start(unsigned long tiempo, int repeticiones, resolucion intervalo)
 {

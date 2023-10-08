@@ -2,15 +2,15 @@ Libreria MarkAlc_Alarma
 =======================
 Arduino
 -------
-Para instalar esta librería en Arduino solo hay que descargar el fichero "ZIP" pulsando [AQUÍ](https://github.com/AsociacionMakerAlicante/MakAlc_Alarma/archive/refs/heads/master.zip). Una vez descargado se instala desde la opción de menú "Programa | Incluir librería | Añadir biblioteca ZIP"
-![Instalar librería ZIP](https://github.com/AsociacionMakerAlicante/MakAlc_Alarma/raw/master/test/Instalar_Libreria_Zip.JPG)
+Para instalar esta librería en Arduino solo hay que descargar el fichero "ZIP" pulsando [AQUÍ](https://github.com/Ricardo1366/MakAlc_Alarma/archive/refs/heads/master.zip). Una vez descargado se instala desde la opción de menú "Programa | Incluir librería | Añadir biblioteca ZIP"
+![Instalar librería ZIP](https://github.com/Ricardo1366/MakAlc_Alarma/raw/master/test/Instalar_Libreria_Zip.JPG)
 
 PlaformIO
 ---------
 Para trabajar con esta libreria en PlatormIO solo tienes que incluir en el fichero platformio.ini el siguiente texto:
 ```text
 lib_deps =
-           https://github.com/AsociacionMakerAlicante/MakAlc_Alarma@^1.0.2
+           https://github.com/Ricardo1366/MakAlc_Alarma@^1.0.2
 ```
 Documentación
 =============
@@ -22,7 +22,7 @@ Marklc_Alarma Nombre_Variable;
 ```
 Los parámetros que admite son los siguientes:
 
-___tiempo___ (unsigned long): Tiempo a cronometrar. El parámetro "resolución" indica si se ,mide en microsegundos, milisegundos (por defecto) o en segundos.
+___tiempo___ (unsigned long): Tiempo a cronometrar. El parámetro "resolución" indica si se mide en microsegundos, milisegundos (por defecto) o en segundos.
 
 ___repeticiones___ (int): Indica cuantas veces se debe repetir el proceso. Si se indica un número inferior a 1 se repite de forma indefinida.
 
@@ -46,6 +46,6 @@ __ProximoEvento__: Devuelve el tiempo que falta para que la alarma se active. El
 
 __QuedanRepeticiones__: Devuelve el número de veces que se ejecutará la alarma antes de darse por finalizada.
 
-__Start__: Pone es marcha la cuenta atrás. Si se le pasa algún parámetro sobrescribe el valor informado con `define()`.
+__Start__: Pone en marcha la cuenta atrás. Si se le pasa algún parámetro sobrescribe el valor informado con `define()`. Si no se indican parámetros la primera alarma se activará una vez transcurrido el tiempo indicado en el parámetro "tiempo". Si se indica algún parámetro se actualiza el parámetro indicado y se lanza la ejecución de la primera alarma.
 
 Si encuntras algún fallo en la ejecución de la libreria, por favor informa [AQUÍ](mailto:ricardomakeralicante@gmail.com)

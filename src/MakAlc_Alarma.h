@@ -34,7 +34,7 @@ private:
 
 	// Asigna el "tiempo" a partir del cual contamos.
 	void asignaInicio();
-
+	// Función a ejecutar.
 	void (*_funcion)();
 
 public:
@@ -67,6 +67,16 @@ public:
 	// Inicia una "Alarma".
 	// El primer evento sucede al pasar el tiempo establecido.
 	void Start();
+
+	// Inicia la "Alarma" y lanza el primer evento.
+	// Establece los intervalos al tiempo indicado manteniendo el resto
+	// de parámetros tal como se definieron en "define"
+	void Start(unsigned long tiempo);
+
+	// Inicia la "Alarma" y lanza el primer evento.
+	// Establece el tiempo y repeticiones indicadas manteniendo el resto
+	// de parámetros tal como se definieron en "define"
+	void Start(unsigned long tiempo, int repeticiones);
 
 	// Inicia la "Alarma" y lanza el primer evento.
 	void Start(unsigned long tiempo, int repeticiones = 1, resolucion intervalo = MILISEGUNDOS);
